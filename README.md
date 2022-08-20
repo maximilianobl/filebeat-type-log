@@ -1,33 +1,28 @@
 # Filebeat
 
-Filebeat is a lightweight shipper for forwarding and centralizing log data. Installed as an agent on your servers,
-Filebeat monitors the log files or locations that you specify, collects log events, and forwards them either to
-Elasticsearch or Logstash for indexing.
+Filebeat es un cargador ligero para reenviar y centralizar datos de registro. Instalado como un agente en sus servidores, Filebeat monitorea los archivos de registro o las ubicaciones que especifique, recopila eventos de registro y los reenvía a Elasticsearch o Logstash para su indexación.
 
-## Usage
+## Uso
 
-To include Filebeat in the stack, run Docker Compose from the root of the repository with an additional command line
-argument referencing the `filebeat-compose.yml` file:
+Para incluir Filebeat en la pila, ejecute Docker Compose desde la raíz del repositorio haciendo referencia al archivo `docker-compose.yml`:
 
 ```console
-$ docker-compose -f docker-compose.yml -f extensions/filebeat/filebeat-compose.yml up
+$ docker-compose up
 ```
 
-## Configuring Filebeat
+## Configuración de Filebeat
 
-The Filebeat configuration is stored in [`config/filebeat.yml`](./config/filebeat.yml). You can modify this file with
-the help of the [Configuration reference][filebeat-config].
+La configuración de Filebeat se almacena en [`config/filebeat.yml`](./config/filebeat.yml). Puede modificar este archivo con la ayuda de la [referencia de configuración][filebeat-config].
 
-Any change to the Filebeat configuration requires a restart of the Filebeat container:
+Cualquier cambio en la configuración de Filebeat requiere un reinicio del contenedor de Filebeat:
 
 ```console
-$ docker-compose -f docker-compose.yml -f extensions/filebeat/filebeat-compose.yml restart filebeat
+$ docker-compose restart filebeat
 ```
 
-Please refer to the following documentation page for more details about how to configure Filebeat inside a Docker
-container: [Run Filebeat on Docker][filebeat-docker].
+Consulte la siguiente página de documentación para obtener más detalles sobre cómo configurar Filebeat dentro de un contenedor Docker: [Ejecute Filebeat en Docker][filebeat-docker].
 
-## See also
+## Ver también
 
 [Filebeat documentation][filebeat-doc]
 
